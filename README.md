@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌍 Geopolitical Conflict Analytics
+# Geopolitical Conflict Analytics
 **Multimodal Visual Analytics of the Iran-USA Geopolitical Conflict (Jan 2023 – Jun 2024)**
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -15,10 +15,10 @@
 
 ---
 
-## 📌 Overview
+## Overview
 This repository contains a professional-grade analytical pipeline designed to model the cascading impacts of geopolitical friction in the Middle East. Combining **real-time financial market data** with **synthetic conflict modeling**, it generates an interactive Streamlit dashboard featuring multi-axis time-series, cross-correlation tracking, and geospatial chokepoint mapping.
 
-### ✨ Key Features
+### Key Features
 - **Hybrid Data Architecture**: Blends real-world Yahoo Finance API data (WTI Crude, S&P 500, Gold) with synthetic procedural data where daily APIs are opaque or paywalled.
 - **Resilient Pipeline**: Includes auto-imputation (ffill/bfill) across weekends, temporal lag generation (up to 10 days), and rolling 7-day market volatility trackers.
 - **Multimodal Visualizations**: Employs interactive `plotly` maps alongside high-fidelity static `matplotlib` and `seaborn` charts spanning time-series, heatmaps, and event annotation. 
@@ -26,21 +26,21 @@ This repository contains a professional-grade analytical pipeline designed to mo
 
 ---
 
-## 📸 Dashboard Preview
+## Dashboard Preview
 
 ![Dashboard Preview](docs/screenshots/Dashboard.png)
 
 ---
 
-## 🏗️ Project Architecture
+## Project Architecture
 
 ```text
 Assignment 6/
-├── app.py                          # 🚀 Streamlit dashboard (UI entry point)
-├── main.py                         # ⚙️ Pipeline orchestrator (CLI entry point)
-├── requirements.txt                # 📦 Dependencies
+├── app.py                          # Streamlit dashboard (UI entry point)
+├── main.py                         # Pipeline orchestrator (CLI entry point)
+├── requirements.txt                # Dependencies
 │
-├── src/                            # 🧠 Core Engine
+├── src/                            # Core Engine
 │   ├── data_loader.py              # Hybrid fetch logic (yfinance + procedural)
 │   ├── preprocess.py               # Time-alignment & missing value imputation
 │   ├── features.py                 # Feature engineering (lags, volatility)
@@ -50,13 +50,13 @@ Assignment 6/
 │   ├── raw/                        # Raw ingested streams (.csv)
 │   └── processed/                  # Unified analytical dataset (.csv)
 │
-├── outputs/charts/                 # 📊 Rendered chart artifacts (.png)
-└── docs/                           # 📄 Analytics report & screenshots
+├── outputs/charts/                 # Rendered chart artifacts (.png)
+└── docs/                           # Analytics report & screenshots
 ```
 
 ---
 
-## 📊 The Hybrid Data Strategy
+## The Hybrid Data Strategy
 
 To maintain academic rigor while ensuring evaluation stability, this project uses a deterministic fallback strategy:
 
@@ -73,9 +73,10 @@ To maintain academic rigor while ensuring evaluation stability, this project use
 
 ---
 
-## 🚀 Quick Start Guide
+## Quick Start Guide
 
 ### 1. Environment Setup
+
 Clone the repository and install the required dependencies using a virtual environment:
 
 ```bash
@@ -93,6 +94,7 @@ pip install -r requirements.txt
 ```
 
 ### 2. Execute the Data Pipeline
+
 Run the orchestrator to fetch real-time market data, process it, and generate the static visualizations into `outputs/charts/`:
 
 ```bash
@@ -100,6 +102,7 @@ python main.py
 ```
 
 ### 3. Launch the Analytics Dashboard
+
 Start the interactive Streamlit server to explore the generated data and geospatial maps:
 
 ```bash
@@ -108,7 +111,7 @@ streamlit run app.py
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Data Sourcing:** `yfinance`
 - **Data Engineering:** `pandas`, `numpy`
@@ -116,4 +119,5 @@ streamlit run app.py
 - **Geospatial & Interactive Web:** `plotly`, `streamlit`
 
 ---
+
 > **Developer:** Krishna Sikheriya (IIT2023139) | DV Lab Assignment 5 Evaluation
