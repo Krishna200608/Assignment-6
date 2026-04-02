@@ -8,7 +8,7 @@
 ---
 
 ### 1. Objective
-The objective of this project is to perform a multimodal visual analysis of a simulated timeline detailing the Iran-USA geopolitical conflict (January 2023 - June 2024). The analysis evaluates the compounding effects of conflict events—such as airstrikes and naval standoffs in the Strait of Hormuz—on key macroeconomic variables (Oil, S&P 500, Gold, Inflation, Exchange Rate) and environmental indicators (CO2 emissions proxies).
+The objective of this project is to perform a multimodal visual analysis of a simulated timeline detailing the Iran-USA geopolitical conflict (January 2025 - June 2026). The analysis evaluates the compounding effects of conflict events—such as airstrikes and naval standoffs in the Strait of Hormuz—on key macroeconomic variables (Oil, S&P 500, Gold, Inflation, Exchange Rate) and environmental indicators (CO2 emissions proxies).
 
 ### 2. Data Design and Preprocessing
 The project employs a **hybrid data strategy**, combining real-world financial market data with synthetic conflict and environmental indicators.
@@ -41,7 +41,7 @@ The pipeline engineers several high-level analytical variables (`features.py`):
 - **Observation:** There is a strong positive correlation between `Conflict_Intensity` and `Gold_Price` (safe-haven asset tracking). Conversely, `Stock_Index` shows a strong negative partial correlation with the conflict measure.
 
 #### E. Event Impact Visualization
-- **Observation:** By overlaying binary event flags (e.g., "Airstrikes" on April 10, 2023) atop the baseline oil price trajectory, we see clear structural breaks. Prices do not immediately decay; the "fear premium" sustains elevated oil prices for 30–40 days post-event.
+- **Observation:** By overlaying binary event flags (e.g., "Airstrikes" on April 10, 2025) atop the baseline oil price trajectory, we see clear structural breaks. Prices do not immediately decay; the "fear premium" sustains elevated oil prices for 30–40 days post-event.
 
 #### F. Causal and Lag Analysis (Cross-Correlation)
 - **Observation:** The lag analysis chart demonstrates that an oil price shock typically leads the stock market decline by 1 to 4 days (peak negative correlation at lag -3). Conversely, inflation shows a much longer tail, peaking in correlation with conflict intensity 7 to 14 days after the initial event. 

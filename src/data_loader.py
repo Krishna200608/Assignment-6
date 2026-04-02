@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-def fetch_real_financial_data(start_date='2023-01-01', end_date='2024-06-30'):
+def fetch_real_financial_data(start_date='2025-01-01', end_date='2026-06-30'):
     """
     Fetches REAL financial market data from Yahoo Finance (free, no API key).
     Tickers:
@@ -49,7 +49,7 @@ def generate_synthetic_fallback(col_name, dates, n):
     return pd.Series(fallbacks.get(col_name, np.zeros(n)), index=dates, name=col_name)
 
 
-def generate_data(start_date='2023-01-01', end_date='2024-06-30'):
+def generate_data(start_date='2025-01-01', end_date='2026-06-30'):
     """
     Hybrid data loader:
       - Financial data (Oil, Stocks, Gold) → REAL data from Yahoo Finance
@@ -120,10 +120,10 @@ def generate_data(start_date='2023-01-01', end_date='2024-06-30'):
 
     # --- Inject geopolitical event shocks ---
     events = {
-        '2023-04-10': ('Airstrikes', 60),
-        '2023-08-15': ('Oil facility attacks', 85),
-        '2023-11-20': ('Strait closure threats', 70),
-        '2024-02-10': ('Major naval standoff', 90),
+        '2025-04-10': ('Airstrikes', 60),
+        '2025-08-15': ('Oil facility attacks', 85),
+        '2025-11-20': ('Strait closure threats', 70),
+        '2026-02-10': ('Major naval standoff', 90),
     }
 
     data['Event_Flag'] = 'None'
@@ -174,7 +174,7 @@ def generate_data(start_date='2023-01-01', end_date='2024-06-30'):
 
 
 # Legacy wrapper for backward compatibility with main.py
-def generate_synthetic_data(start_date='2023-01-01', end_date='2024-06-30'):
+def generate_synthetic_data(start_date='2025-01-01', end_date='2026-06-30'):
     """Backward-compatible wrapper. Now fetches real data where possible."""
     return generate_data(start_date, end_date)
 

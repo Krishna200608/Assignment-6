@@ -9,7 +9,7 @@
 > **Goal:** Understand what your project does so you can explain it confidently in 2 sentences.
 
 ### What does your project do?
-It analyzes how the **Iran-USA geopolitical conflict** (Jan 2023 – Jun 2024) impacts **financial markets** (Oil, Stocks, Gold, Inflation) and **environmental indicators** (CO2 Emissions). It uses a **hybrid data strategy** — real financial data from Yahoo Finance + synthetic conflict/environmental data — processes it through a feature engineering pipeline, creates 6 analytical charts, and displays everything in a professional Streamlit dashboard.
+It analyzes how the **Iran-USA geopolitical conflict** (Jan 2025 – Jun 2026) impacts **financial markets** (Oil, Stocks, Gold, Inflation) and **environmental indicators** (CO2 Emissions). It uses a **hybrid data strategy** — real financial data from Yahoo Finance + synthetic conflict/environmental data — processes it through a feature engineering pipeline, creates 6 analytical charts, and displays everything in a professional Streamlit dashboard.
 
 ### The Pipeline (4 Steps)
 ```

@@ -11,7 +11,7 @@
 | **Title** | Multimodal Visual Analytics of Geopolitical Conflict |
 | **Student** | Krishna Sikheriya (IIT2023139) |
 | **Course** | Data Visualization Lab — Assignment 5 |
-| **Timeline Modelled** | January 2023 – June 2024 |
+| **Timeline Modelled** | January 2025 – June 2026 |
 | **GitHub Repo** | https://github.com/Krishna200608/Assignment-6.git |
 | **Branch** | `main` |
 
@@ -35,7 +35,7 @@ Assignment 6/                       ← Project root
 │
 ├── data/
 │   ├── raw/                        # Raw ingested data
-│   │   └── raw_data.csv            # 547 rows, 9 columns, daily from 2023-01-01 to 2024-06-30
+│   │   └── raw_data.csv            # 546 rows, 9 columns, daily from 2025-01-01 to 2026-06-30
 │   └── processed/
 │       └── unified_dataset.csv     # Feature-engineered dataset with ~20 columns
 │
@@ -105,7 +105,7 @@ main.py orchestrates 4 sequential stages:
   │     Exchange_Rate (no free daily API exists for these)          │
   │   • Injects 4 geopolitical event shocks with exponential decay │
   │   • Graceful fallback: if yfinance fails → all synthetic       │
-  │   • Output: data/raw/raw_data.csv (547 rows × 9 columns)      │
+  │   • Output: data/raw/raw_data.csv (546 rows × 9 columns)      │
   └─────────────────────────────────────────────────────────────────┘
                               ↓
   ┌─────────────────────────────────────────────────────────────────┐
@@ -162,10 +162,10 @@ If `yfinance` fails (no internet, API down, SSL issues), each variable independe
 
 | Date | Event Name | Intensity (0–100) |
 |------|-----------|-------------------|
-| 2023-04-10 | Airstrikes | 60 |
-| 2023-08-15 | Oil facility attacks | 85 |
-| 2023-11-20 | Strait closure threats | 70 |
-| 2024-02-10 | Major naval standoff | 90 |
+| 2025-04-10 | Airstrikes | 60 |
+| 2025-08-15 | Oil facility attacks | 85 |
+| 2025-11-20 | Strait closure threats | 70 |
+| 2026-02-10 | Major naval standoff | 90 |
 
 Each event triggers:
 - **Conflict_Intensity** spike with exponential decay (`exp(-t/10)`) over 40 days
@@ -213,7 +213,7 @@ yfinance
 
 | Column | Type | Description |
 |--------|------|-------------|
-| Date | datetime | Daily from 2023-01-01 to 2024-06-30 |
+| Date | datetime | Daily from 2025-01-01 to 2026-06-30 |
 | Oil_Price | float | WTI Crude $/barrel (real from Yahoo Finance) |
 | Stock_Index | float | S&P 500 points (real from Yahoo Finance) |
 | Gold_Price | float | Gold $/oz (real from Yahoo Finance) |

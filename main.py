@@ -26,7 +26,7 @@ def main():
 
     # --- 1. Data Ingestion ---
     print("[1/4] Fetching data (Yahoo Finance + synthetic)...")
-    raw_data = generate_synthetic_data(start_date='2023-01-01', end_date='2024-06-30')
+    raw_data = generate_synthetic_data(start_date='2025-01-01', end_date='2026-06-30')
     raw_data.to_csv('data/raw/raw_data.csv', index=False)
 
     # --- 2. Time Alignment ---
