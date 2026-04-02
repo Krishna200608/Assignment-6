@@ -11,7 +11,7 @@
 | **Title** | Multimodal Visual Analytics of Geopolitical Conflict |
 | **Student** | Krishna Sikheriya (IIT2023139) |
 | **Course** | Data Visualization Lab — Assignment 5 |
-| **Timeline Modelled** | January 2025 – June 2026 |
+| **Timeline Modelled** | January 2023 – June 2024 |
 | **GitHub Repo** | https://github.com/Krishna200608/Assignment-6.git |
 | **Branch** | `main` |
 
@@ -35,7 +35,7 @@ Assignment 6/                       ← Project root
 │
 ├── data/
 │   ├── raw/                        # Raw ingested data
-│   │   └── raw_data.csv            # 546 rows, 9 columns, daily from 2025-01-01 to 2026-06-30
+│   │   └── raw_data.csv            # 547 rows, 9 columns, daily from 2023-01-01 to 2024-06-30
 │   └── processed/
 │       └── unified_dataset.csv     # Feature-engineered dataset with ~20 columns
 │
@@ -101,13 +101,11 @@ main.py orchestrates 4 sequential stages:
   │ Stage 1: DATA INGESTION (src/data_loader.py)                   │
   │   • Fetches Oil (CL=F), S&P 500 (^GSPC), Gold (GC=F) from    │
   │     Yahoo Finance using yfinance                               │
-  │   • Date trick: fetches data from 4 years prior (2021-2022)    │
-  │     and shifts the index forward by 4 years → 2025-2026 axis  │
   │   • Generates synthetic: Conflict_Intensity, CO2, Inflation,   │
   │     Exchange_Rate (no free daily API exists for these)          │
   │   • Injects 4 geopolitical event shocks with exponential decay │
   │   • Graceful fallback: if yfinance fails → all synthetic       │
-  │   • Output: data/raw/raw_data.csv (546 rows × 9 columns)      │
+  │   • Output: data/raw/raw_data.csv (547 rows × 9 columns)      │
   └─────────────────────────────────────────────────────────────────┘
                               ↓
   ┌─────────────────────────────────────────────────────────────────┐
@@ -155,9 +153,6 @@ main.py orchestrates 4 sequential stages:
 | Inflation (CPI) | Procedural generation | Synthetic | FRED = monthly only, not daily |
 | Exchange Rate (IRR) | Procedural generation | Synthetic | USD/IRR unreliable on Yahoo Finance |
 
-### Date-Shifting Trick
-Since the project models events in 2025–2026 (which is current/future at the time of development), real Yahoo Finance data is fetched from **exactly 4 years prior** (2021-01-01 to 2022-06-30) and the pandas DatetimeIndex is shifted forward by 4 years using `pd.DateOffset(years=4)`. This preserves real market variance/volatility patterns while displaying on the correct 2025–2026 timeline.
-
 ### Graceful Fallback
 If `yfinance` fails (no internet, API down, SSL issues), each variable independently falls back to synthetic Brownian motion generation. The pipeline never crashes — it always produces valid output.
 
@@ -167,10 +162,10 @@ If `yfinance` fails (no internet, API down, SSL issues), each variable independe
 
 | Date | Event Name | Intensity (0–100) |
 |------|-----------|-------------------|
-| 2025-04-10 | Airstrikes | 60 |
-| 2025-08-15 | Oil facility attacks | 85 |
-| 2025-11-20 | Strait closure threats | 70 |
-| 2026-02-10 | Major naval standoff | 90 |
+| 2023-04-10 | Airstrikes | 60 |
+| 2023-08-15 | Oil facility attacks | 85 |
+| 2023-11-20 | Strait closure threats | 70 |
+| 2024-02-10 | Major naval standoff | 90 |
 
 Each event triggers:
 - **Conflict_Intensity** spike with exponential decay (`exp(-t/10)`) over 40 days
@@ -218,7 +213,7 @@ yfinance
 
 | Column | Type | Description |
 |--------|------|-------------|
-| Date | datetime | Daily from 2025-01-01 to 2026-06-30 |
+| Date | datetime | Daily from 2023-01-01 to 2024-06-30 |
 | Oil_Price | float | WTI Crude $/barrel (real from Yahoo Finance) |
 | Stock_Index | float | S&P 500 points (real from Yahoo Finance) |
 | Gold_Price | float | Gold $/oz (real from Yahoo Finance) |
@@ -261,8 +256,6 @@ yfinance
 5. **Static geospatial chart**: `visualizations.py` generates a conceptual Matplotlib scatter plot for the geospatial chart (C). The interactive Plotly map lives only in `app.py` (the Streamlit dashboard).
 
 6. **Report duplication**: `report.md` exists in both `outputs/` and `docs/`. The `app.py` reads from `docs/report.md`. Keep both in sync if editing.
-
-7. **Date-shift 4 years**: Real Yahoo Finance data is from 2021–2022, shifted +4 years to display as 2025–2026. This is intentional — 2026 data does not exist yet on Yahoo Finance.
 
 ---
 
