@@ -1,7 +1,7 @@
 <div align="center">
 
 # Geopolitical Conflict Analytics
-**Multimodal Visual Analytics of the Iran-USA Geopolitical Conflict (Jan 2025 – Jun 2026)**
+**Multimodal Visual Analytics of the Iran-USA Geopolitical Conflict (Jan 2024 – Jun 2026)**
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
