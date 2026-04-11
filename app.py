@@ -23,7 +23,7 @@ if page == "Dashboard":
         analyze the cascading impact of geopolitical friction in the Middle East 
         on macro-economic variables (Oil, S&P 500, Gold, Inflation) 
         and proxy environmental indicators (CO2 Emissions).  
-        Financial data is sourced from **Yahoo Finance**; conflict and environmental models are synthetic.
+        Financial data is sourced natively from **Yahoo Finance**, and conflict data is parsed from verified GitHub **OSINT JSON pipelines**.
     """)
     
     st.markdown("<br>", unsafe_allow_html=True)
@@ -109,8 +109,9 @@ elif page == "About":
         on financial markets and environmental indicators.
         
         **Data Sources:**
-        - `Oil Price`, `S&P 500`, `Gold` → **Real data** from Yahoo Finance (`yfinance`)
-        - `Conflict Intensity`, `CO2`, `Inflation` → **Synthetic models** (no free daily API exists)
+        - `Oil Price`, `S&P 500`, `Gold`, `Treasury Yield`, `Dollar Index` → **Real data API** from Yahoo Finance (`yfinance`)
+        - `Conflict Intensity` → **Real data** parsed from Middle East OSINT Missile trackers (GitHub)
+        - `CO2`, `Inflation`, `Exchange Rate` → **Macro-Interpolated Data** anchored perfectly to Treasury/DXY fluctuation realities.
         
         **Core Tech Stack:**
         - `yfinance`: Real-time market data fetching
@@ -120,7 +121,7 @@ elif page == "About":
         - `streamlit`: Dashboard framework
         
         **Data Processing Highlights:**
-        - Hybrid real + synthetic data pipeline with graceful offline fallback
+        - High-fidelity Real OSINT + Macro-Interpolated Anchor pipeline
         - Forward/backward fill for time alignment across weekends/holidays
         - Rolling volatility, temporal lags, and binary event-impact trackers
     """)
